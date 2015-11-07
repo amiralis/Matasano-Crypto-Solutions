@@ -57,11 +57,19 @@ def score(text):
 	return text_score
 
 
-if __name__ =='__main__':
-	cipher_text = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+if __name__ == '__main__':
+	# read all cipher texts to memory
+	cipher_texts = []
+	for cipher_text in open('4.txt'):
+		cipher_texts.append(cipher_text.strip())
+
+	# find all potential texts
 	potential_texts = []
-	for i in range(256):
-		potential_texts.append(fixed_xor_char(hex_to_bin(cipher_text), i))
+	for cipher_text in cipher_texts:
+		for i in range(256):
+			potential_texts.append(fixed_xor_char(hex_to_bin(cipher_text), i))
+
+	# find the score of all potential texts        
 	scores = []
 	for potential_text in potential_texts:
 		scores.append(score(potential_text))
