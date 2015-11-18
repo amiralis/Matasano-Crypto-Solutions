@@ -2,7 +2,7 @@ __author__ = 'Amirali Sanatinia'
 
 
 def chunks(cipher, size):
-	""" Return the splits of a text using a specifed block size """
+	""" Return the splits of a text using a specified block size """
 	return [cipher[i*size:(i+1)*size] for i in range(len(cipher)/size)]
 
 
