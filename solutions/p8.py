@@ -1,9 +1,12 @@
 __author__ = 'Amirali Sanatinia'
 
 
+import math
+
+
 def chunks(cipher, size):
 	""" Return the splits of a text using a specified block size """
-	return [cipher[i*size:(i+1)*size] for i in range(len(cipher)/size)]
+	return [cipher[i*size:(i+1)*size] for i in range(int(math.ceil(len(cipher)*1.0/size)))]
 
 
 def distinct_blocks(cipher, size):

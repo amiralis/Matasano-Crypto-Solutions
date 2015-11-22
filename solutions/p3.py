@@ -57,15 +57,23 @@ def score(text):
 	return text_score
 
 
-if __name__ =='__main__':
-	cipher_text = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+def find_xor_key(ct):
+	""" Find the fixed XOR key """
 	potential_texts = []
 	for i in range(256):
-		potential_texts.append(fixed_xor_char(hex_to_bin(cipher_text), i))
+		potential_texts.append(fixed_xor_char(hex_to_bin(ct), i))
 	scores = []
 	for potential_text in potential_texts:
 		scores.append(score(potential_text))
 
 	# find the element with the highest score
 	index = scores.index(max(scores))
-	print potential_texts[index]
+
+	return index
+
+
+if __name__ =='__main__':
+	cipher_text = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+	key = find_xor_key(cipher_text)	
+	print "The Key is: ", key
+	print "The message is: ", fixed_xor_char(hex_to_bin(cipher_text), key)
