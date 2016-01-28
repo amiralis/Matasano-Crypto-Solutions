@@ -7,4 +7,4 @@
   5. [Implement repeating-key XOR](https://github.com/amiralis/Matasano-Crypto-Solutions/blob/master/solutions/p5.py)
   6. [Break repeating-key XOR](https://github.com/amiralis/Matasano-Crypto-Solutions/blob/master/solutions/p6.py)
   7. [AES in ECB mode](https://github.com/amiralis/Matasano-Crypto-Solutions/blob/master/solutions/p7.py)
-  8. [Detect AES in ECB mode ](https://github.com/amiralis/Matasano-Crypto-Solutions/blob/master/solutions/solutions/p8.py)
+  8. [Detect AES in ECB mode ](https://github.com/amiralis/Matasano-Crypto-Solutions/blob/master/solutions/p8.py)
